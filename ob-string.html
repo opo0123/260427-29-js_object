@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object - string</title>
+  </head>
+  <body>
+    <script>
+      // 1. lenth 속성
+      const str = "Hello, JavaScript";
+      console.log(`1. length : ${str.length}`);
+
+      //  2. toLowerCase, toLowerCase
+      const text = "Hello";
+      console.log(`2. toUpperCase() 대문자 : ${text.toUpperCase()}`);
+      console.log(`2. toLowerCase() 소문자 : ${text.toLowerCase()}`);
+
+      //  3. includes()
+      const email = "user@example.com";
+      console.log(`3. 포함여부 : ${email.includes("@")}`);
+
+      // 4. trim() = 문자열 앞뒤의 공백을 제거하는 메서드
+      const input = " Hello";
+      console.log(input.length); // 출력 = 6
+      console.log(input.trim().length); // 출력 = 5
+
+      // 5. slice() = 객체의 일부 구간을 잘라서 새로운 값으로 반환하는 메서드
+      const str2 = "JavaScript";
+      // slice(시작 index(포함), 끝 index(미포함, 바로 앞까지만 자름))
+      console.log(`부분 문자열 : ${str2.slice(0, 4)}`);
+      // 출력 = 부분 문자열 : Java
+      console.log(`부분 문자열 : ${str2.slice(2, 7)}`);
+      // 출력 = 부분 문자열 : vaScr
+
+      // 6. replace() = 문자열에서 특정 부분을 다른 값으로 바꿔서 새로운 문자열을 반환하는 메서드
+      const sentence = "I like Java";
+      console.log(`6. 문자열 교체 : ${sentence.replace("Java", "JavaScript")}`);
+      // 출력 = 6. 문자열 교체 : I like JavaScript
+
+      // 7. split() = 문자열을 특정 기준(구분자)으로 나눠서 배열(Array)로 반환하는 메서드
+      const data = "apple, banana, orange";
+      console.log(`7. 문자열 분리 : ${data.split("")}`);
+      // 출력 = 7. 문자열 분리 : a,p,p,l,e,,, ,b,a,n,a,n,a,,, ,o,r,a,n,g,e
+    </script>
+  </body>
+</html>

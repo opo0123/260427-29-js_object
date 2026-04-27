@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <script>
+      // js 표준 내장 객체
+      // 1. string   2. array   3. date   4. math
+
+      // 1. string
+      const str = "Hello World";
+      console.log(str);
+      console.log(str.length); // 문자의 길이를 알 수 있는 속성
+      console.log(str.toUpperCase()); // 대문자로 바꾸는 메서드
+      console.log(str.includes("world")); // 해당 내용의 유무를 확인하는 메서드
+
+      // 2. array
+      const arr = [1, 2, 3, 4];
+      console.log(arr);
+      console.log(arr.length);
+      console.log(arr.push(5)); // 배멸 맨 뒤에 값 추가하는 메서드
+      console.log(arr.join("==")); // 배열 안의 요소들을 하나의 문자열(string)로 합쳐주는 메서드
+
+      // 3. date
+      const today = new Date();
+      console.log(today);
+      console.log(today.toDateString()); // 현재 날짜
+      console.log(today.getFullYear()); // 현재 연도
+      console.log(today.getMonth() + 1); // 현재 날짜 (0부터 출력하기 때문에 + 1)
+
+      // 4. math
+      console.log(Math.PI); // 3.14...
+      console.log(Math.max(10, 30, 59)); // 최대 값
+      console.log(Math.min(10, 30, 59)); // 최소 값
+      console.log(Math.random()); // 0 ~ 1 사이 랜덤 값 출력
+    </script>
+  </body>
+</html>
