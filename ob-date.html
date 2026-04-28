@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>object - date</title>
+  </head>
+  <body>
+    <div id="container">
+      <p >
+        현재 시각 :
+        <span class="display">
+          <!-- js 출력 -->
+        </span>
+      </p>
+    </div>
+
+    <script>
+      // 현재 시간을 나타내는 함수
+      function displayNow() {
+        // console.log("확인");
+        let now = new Date();
+        // console.log(now); // 현재 날짜, 시간 담김
+        const currentTime = now.toLocaleTimeString();
+        // console.log(currentTime); // 현재 시간만 담김
+
+        const display = document.querySelector(".display"); // span에 변수 담기
+        display.innerHTML = `${currentTime}` // 출력
+      }
+      // displayNow();
+
+      // 일정 시간마다 코드를 반복 실행하는 메서드
+      setInterval(displayNow , 1000) 
+    </script>
+  </body>
+</html>
