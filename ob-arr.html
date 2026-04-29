@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array 객체</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3, 4, 5];
+
+      //  1. length 속성
+      console.log(`length : ${arr.length}`); // 출력 = length : 5
+
+      // 2. push() : 배열 끝에 요소를 추가하는 메서드
+      arr.push(7);
+      console.log(`push : ${arr}`); // 출력 = push : 1,2,3,4,5,7
+
+      // 3. pop() : 배열 끝 요소를 제거하는 메서드
+      arr.pop();
+      console.log(`pop : ${arr}`); // 출력 = pop : 1,2,3,4,5 (7 제거)
+
+      // 4. shift() : 배열 첫 요소를 제거하는 메서드
+      arr.shift();
+      console.log(`shift : ${arr}`); // 출력 = shift : 1,2,3,4,5 (7 제거)
+
+      // 5. unshift() : 배열 앞에 요소를 추가하는 메서드
+      arr.unshift(7);
+      console.log(`unshift : ${arr}`); // 출력 = unshift : 7,2,3,4,5
+
+      // 6. indexOf() : 특정 값이 몇 번째(index)에 있는지 찾는 메서드 (1)
+      console.log(`indexOf : ${arr.indexOf(4)}`); // 출력 = indexOf : 3
+      console.log(`indexOf : ${arr.indexOf(2)}`); // 출력 = indexOf : 1
+
+      // 7. slice() : 배열 일부를 잘라서 새로운 값으로 반환하는 메서드
+      // slice(시작 index(포함), 끝 index(미포함, 바로 앞까지만 자름))
+      console.log(`slice : ${arr.slice(1, 4)}`); // 출력 = slice : 2,3,4
+
+      // 8. splice() : 배열의 원하는 위치에서 요소를 삭제, 추가, 교체하는 메서드
+      // splice(시작 index(지정), 삭제 개수, 추가 값1, 추가값 2)
+      arr.splice(1, 3);
+      console.log(`splice : ${arr}`); // 출력 = splice : 7,5 (7,2,3,4,5에서 index 1번부터 3개(2,3,4) 삭제)
+      arr.splice(2, 2, 9);
+      console.log(`splice : ${arr}`); // 출력 = splice : 7,5,9 (7,2,3,4,5에서 index 2번부터 2개(3,4) 삭제, 9 추가)
+
+      // 9. join() : 배열을 문자열로 변환하는 메서드 (1)
+      console.log(`join : ${arr.join("&")}`); // 출력 = join : 7&5&9
+
+      // 10. forEach() : 배열의 요소를 하나씩 꺼내서 반복 실행하는 메서드 (1)
+      // 비파괴 메서드 (원본 데이터를 변경 X)
+      arr.forEach((item, index) => {
+        console.log(`forEach : ${index},${item}`);
+        // 출력 = forEach : 0,7 / forEach : 1,5 / forEach : 2,9
+      });
+    </script>
+  </body>
+</html>

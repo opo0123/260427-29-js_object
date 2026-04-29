@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array 예제 - 상품 리스트</title>
+  </head>
+  <style>
+    #list {
+      display: flex;
+      gap: 10px;
+    }
+    .card {
+      padding: 10px;
+      border: 1px solid #eee;
+    }
+  </style>
+  <body>
+    <h1>상품 목록</h1>
+    <div id="list">
+      <!-- js 출력 -->
+    </div>
+
+    <div id="price">
+      <!-- js 출력 -->
+    </div>
+
+    <script>
+      // 상품 리스트 더미 데이터
+      const products = [
+        { name: "노트북", price: 1200000 },
+        { name: "마우스", price: 30000 },
+        { name: "키보드", price: 80000 },
+      ];
+
+      // 데이터 추가 : push()
+      products.push({ name: "모니터", price: 50000 });
+      console.log(products); // 모니터 추가 (length : 4)
+
+      // 첫번째 상품 제거 : shift()
+      products.shift();
+      console.log(products); // 노트북 제거 (length : 3)
+
+      // 특정 데이터 수정 : splice()
+      products.splice(
+        0,
+        1,
+        { name: "헤드셋", price: 40000 },
+        { name: "스피커", price: 60000 },
+      );
+      console.log(products); // 노트북, 마우스 제거 / 헤드셋, 스피커 추가 (length : 4)
+
+      // 화면 출력 : forEach()
+      const list = document.getElementById("list");
+      let html = "";
+
+      products.forEach((item) => {
+        // console.log(item); // 하나씩 따로 찍힘
+        html += `
+        <div class="card">
+          <h3>이름 : ${item.name} </h3>
+       <p>가격 : ${item.price}원</p>
+       </div>`;
+      });
+
+      // list에 html 할당 = 출력 완
+      list.innerHTML = html;
+
+      //  가격만 따로 문자열로 만들기 : join()
+      const priceList = products.map((p) => {
+        // console.log(p.price); // 하나씩 따로 찍힘 = forEach()
+        console.log(`가격 목록 : ${p.price}`);
+        return p.price;
+      });
+
+      console.log(`가격 목록 : ${priceList.join("/")}`);
+
+      const price = document.getElementById("price");
+      price.innerText = priceList.join("/");
+    </script>
+  </body>
+</html>
