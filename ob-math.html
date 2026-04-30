@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ob - math</title>
+  </head>
+  <body>
+    <script>
+      let num = 2.623;
+
+      // 1. max() : 여러 숫자 중 최댓값을 반환하는 메서드
+      let maxNum = Math.max(10, 4, 45, 20);
+      console.log(maxNum); // 출력 = 45
+
+      // 2. min() : 여러 숫자 중 최솟값을 반환하는 메서드
+      let minNum = Math.min(10, 4, 45, 20);
+      console.log(minNum); // 출력 = 4
+
+      // 3. round() : 소수 첫째 자리 기준 반올림하는 메서드
+      let roundNum = Math.round(num);
+      console.log(roundNum); // 출력 = 3
+
+      // 4. floor() : 소수점 아래를 버리는 메서드
+      let floorNum = Math.floor(num);
+      console.log(floorNum); // 출력 = 2
+
+      // 5. ceil() : 소수점을 올림하는 메서드
+      let ceilNum = Math.ceil(num);
+      console.log(ceilNum); // 출력 = 3
+
+      // 6. random() : 0 이상 1 미만의 랜덤한 숫자(난수)를 만드는 메서드
+      let randomNum = Math.random(num);
+      console.log(randomNum); // 랜덤 숫자 출력
+
+      // 7. PI : 원주율 π(파이) 값을 나타내는 상수
+      let piNum = Math.PI;
+      console.log(piNum); // 출력 = 3.141592653589793
+    </script>
+  </body>
+</html>
